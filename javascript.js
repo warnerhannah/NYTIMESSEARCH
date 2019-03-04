@@ -16,6 +16,7 @@ $("#search").click(function (event) {
     displayArticles();
 });
 
+
 $("#clear").click(function() {
     $("#searchterm").val(" ");
     $("#numberrecords").val(" ");
@@ -23,9 +24,21 @@ $("#clear").click(function() {
     $("#endyear").val(" ");
 });
 
+
 function displayArticles() {
-    "?key=value&key2=value2"
-    
+
+    if(!startYear) {
+        startYear = "2000"
+    }
+
+    if (!endYear) {
+        endYear = "2019"
+    }
+
+    if (!numberRecords) {
+        numberRecords = "10";
+    }
+
     var queryURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json?q=" + searchTerm + "&begin_date=" + startYear + "0101&end=" + endYear + "1231&api-key=wH8QuP3PdEiiydapXVqaY4ABJnGpKIMr"
     console.log(queryURL);
 
@@ -36,7 +49,6 @@ function displayArticles() {
         console.log(response);
 
         var newDiv = $("<div>");
-
 
         for (i=0;i<numberRecords;i++) {
             var newDiv = $("<div id='newdiv'>");
@@ -57,14 +69,13 @@ function displayArticles() {
             pubDate.text(response.response.docs[i].pub_date);
             newDiv.append(pubDate);
 
-            var webURL = $("<a>Full Article Here</a>");
+            var webURL = $("<a>");
+            webURL.text(response.response.docs[i].web_url);
             webURL.attr("href", response.response.docs[i].web_url);
             newDiv.append(webURL);
 
             $("#dumpArticles").append(newDiv);
         };
       });
-
-
 };
 
