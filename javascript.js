@@ -57,8 +57,8 @@ function displayArticles() {
             pubDate.text(response.response.docs[i].pub_date);
             newDiv.append(pubDate);
 
-            var webURL = $("<p>");
-            webURL.text(response.response.docs[i].web_url);
+            var webURL = $("<a>Full Article Here</a>");
+            webURL.attr("href", response.response.docs[i].web_url);
             newDiv.append(webURL);
 
             $("#dumpArticles").append(newDiv);
