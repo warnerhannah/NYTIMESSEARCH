@@ -1,0 +1,26 @@
+h1 {
+    background: navy;
+    width: 500px;
+    margin: 0 auto;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+form {
+    border: solid 1px;
+    margin: 0 auto;
+    width: 500px;
+    padding: 20px;
+}
+
+#container {
+    border: solid 1px;
+    margin: 0 auto;
+    width: 500px;
+    padding: 20px;
+}
+
+#newdiv {
+    border: solid 1px;
+}

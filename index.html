@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>NY Times Search</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  </head>
+  <body>
+    <h1>New York Times Search</h1>
+
+    <form>
+        <h2>Search Parameters</h2>
+        Search Term:<br>
+        <input type="text" name="searchterm" id="searchterm"><br>
+        Number of Records to Retrieve: <br>
+        <input type="text" name="numberrecords" id="numberrecords"><br>
+        Start Year(Required): <br>
+        <input type="text" name="startyear" id="startyear"><br>
+        End Year(Required): <br>
+        <input type="text" name="endyear" id="endyear"><br>
+        <button id="search">Search</button>
+        <button id="clear">Clear</button>
+    </form>
+
+    <div id="container">
+        <h2>Top Articles</h2>
+        <div id="dumpArticles">
+
+        </div>
+    </div>
+    <a href=""></a>
+    <script src="javascript.js"></script>
+  </body>
+</html>
